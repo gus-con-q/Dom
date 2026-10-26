@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Demostración del DOM</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        input { padding: 10px; font-size: 16px; margin-top: 20px; }
+        h1, h2 { color: #333; }
+    </style>
+</head>
+<body>
+
+    <!-- EJEMPLO 1: Cambiar Texto -->
+    <h1 id="titulo">Hola Mundo</h1>
+    <button id="btnCambiar">Cambiar Título</button>
+
+    <hr style="margin: 40px 0;">
+
+    <!-- EJEMPLO 2: Capturar Entrada de Usuario -->
+    <h2>Escribe algo abajo:</h2>
+    <input type="text" id="cajaTexto" placeholder="Escribe aquí...">
+    <h3 id="resultado">Esperando texto...</h3>
+
+    <!-- JAVASCRIPT QUE MANIPULA EL DOM -->
+    <script>
+        // --- EJEMPLO 1 ---
+        const titulo = document.getElementById('titulo');
+        const boton = document.getElementById('btnCambiar');
+
+        boton.addEventListener('click', () => {
+            titulo.textContent = "¡DOM Manipulado con Éxito!";
+        });
+
+        // --- EJEMPLO 2 ---
+        const entrada = document.getElementById('cajaTexto');
+        const resultado = document.getElementById('resultado');
+
+        entrada.addEventListener('input', () => {
+            resultado.textContent = entrada.value;
+        });
+    </script>
+
+</body>
+</html>
